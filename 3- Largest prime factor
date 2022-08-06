@@ -1,0 +1,35 @@
+const isPrimeNum = (num) => {
+    let isPrime = true;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            isPrime = false;
+        }
+    }
+    return isPrime;
+};
+
+const nextPrimeFactor = num => {
+    let isPrime = isPrimeNum(num);
+    while (!isPrime) {
+        num++;
+        isPrime = isPrimeNum(num);
+    }
+    return num;
+};
+
+const primeFactors = (num) => {
+    let factorsArr = [];
+    let factor = 2; // first prime factor
+    
+    while (num > 1) {
+        while (num % factor !== 0) {
+            factor = nextPrimeFactor(factor + 1);
+        }
+        
+        num = num / factor;
+        factorsArr.push(factor);
+    }
+    return factorsArr[factorsArr.length - 1];
+};
+
+console.log(primeFactors(600851475143));
