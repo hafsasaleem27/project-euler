@@ -11,5 +11,6 @@ const sumOfMultiples = (num, multiple) => {
 
 const sum1 = sumOfMultiples(1000, 3);
 const sum2 = sumOfMultiples(1000, 5);
+const sum3 = sumOfMultiples(1000, 15);
 
-console.log('sumOfMultiples: ', sum1 + sum2)
+console.log('sumOfMultiples: ', sum1 + sum2 - sum3)
