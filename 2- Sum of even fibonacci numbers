@@ -1,0 +1,17 @@
+let limit = 4000000; // 4,000,000;
+
+let fib1 = 1;
+let fib2 = 2;
+let sum = 0;
+let evenSum = 2;
+
+while (evenSum <= limit) {
+   sum = fib1 + fib2;
+   if (sum % 2 === 0) {
+       evenSum += sum;
+   }
+   fib1 = fib2;
+   fib2 = sum;
+}
+
+console.log('evenSum: ', evenSum);
