@@ -1,0 +1,15 @@
+const sumOfMultiples = (num, multiple) => {
+    let sum = 0;
+
+    for (let i = 1; i < num; i++) {
+        if (i % multiple === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+};
+
+const sum1 = sumOfMultiples(1000, 3);
+const sum2 = sumOfMultiples(1000, 5);
+
+console.log('sumOfMultiples: ', sum1 + sum2)
