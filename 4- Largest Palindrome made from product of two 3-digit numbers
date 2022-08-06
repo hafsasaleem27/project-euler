@@ -1,0 +1,36 @@
+// two 3-digit numbers 999 x 999
+
+const isNumPalindrome = (num) => {
+    let str = num.toString();
+    let strLen = str.length;
+    
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i] !== str[strLen - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+const findPalindrome = () => {
+    let num1 = 999;
+    let num2 = 999;
+    // let num1 = 91;
+    // let num2 = 99;
+    
+    let number;
+    let palindromeArr = [];
+    
+    for (let i = num1; i >= 1; i--) {
+        for (let j = num2; j >= 1; j--) {
+            number = i * j;
+            if (isNumPalindrome(number)) {
+                palindromeArr.push(number);    
+            }
+        }
+    }
+    return Math.max.apply(Math, palindromeArr);
+};
+
+const palindrome = findPalindrome();
+console.log('palindrome: ', palindrome)
